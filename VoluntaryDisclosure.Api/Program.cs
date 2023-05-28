@@ -1,8 +1,17 @@
+using VoluntaryDisclosure.Persistance;
+using Microsoft.EntityFrameworkCore;
+using VoluntaryDisclosure.Application.Disclosures;
+using MediatR;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<VoluntaryDisclosureDataContext>(options =>
+    options.UseSqlServer(connectionString));
 
 builder.Services.AddControllers();
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(List.Handler).Assembly));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
