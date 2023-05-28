@@ -1,0 +1,1 @@
+const discloseUrl = 'https://localhost:7163/api/Disclosures';

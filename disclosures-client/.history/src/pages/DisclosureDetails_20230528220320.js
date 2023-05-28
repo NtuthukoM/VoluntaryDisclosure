@@ -1,0 +1,8 @@
+export function DisclosureDetails(){
+
+    return (
+        <>
+        
+        </>
+    )
+}

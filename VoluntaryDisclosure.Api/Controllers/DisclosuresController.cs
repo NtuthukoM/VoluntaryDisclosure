@@ -23,5 +23,12 @@ namespace VoluntaryDisclosure.Api.Controllers
             var result = await mediator.Send(new Create.Command() { Disclosure = disclosure });
             return HandleResult(result);
         }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetDisclosure(int id)
+        {
+            var result = await mediator.Send(new Details.Query() { Id = id });
+            return HandleResult(result);
+        }
     }
 }

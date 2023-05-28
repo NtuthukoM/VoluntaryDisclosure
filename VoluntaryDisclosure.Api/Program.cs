@@ -3,12 +3,24 @@ using Microsoft.EntityFrameworkCore;
 using VoluntaryDisclosure.Application.Disclosures;
 using MediatR;
 
+const string corsPolicy = "CorsPolicy";
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<VoluntaryDisclosureDataContext>(options =>
     options.UseSqlServer(connectionString));
+
+builder.Services.AddCors(opt => {
+    opt.AddPolicy(name: corsPolicy, policy =>
+    {
+        policy
+        .AllowAnyHeader()
+        .AllowAnyMethod()
+        .AllowCredentials()
+        .WithOrigins("http://localhost:3000");
+    });
+});
 
 builder.Services.AddControllers();
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(List.Handler).Assembly));
@@ -30,5 +42,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-
+app.UseCors(corsPolicy);
 app.Run();
