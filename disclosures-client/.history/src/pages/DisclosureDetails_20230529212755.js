@@ -19,7 +19,9 @@ export function DisclosureDetails(){
         <h2>Disclosure Details</h2>
         {
             disclosure !== null &&
-            <div>           
+            <div>
+
+           
             <div>
                 <label>
                     Name
@@ -30,6 +32,7 @@ export function DisclosureDetails(){
             <div>
                 <label>
                     Email
+                    <input type="text" value={email} onChange={e => setEmail(e.target.value)} disabled={submitting}  />
                 </label>
                 {disclosure.email}
             </div>
@@ -38,32 +41,42 @@ export function DisclosureDetails(){
             <div>
                 <label>
                     Do you have a criminal record/are you engaged in a current legal proceeding?
+                    <input type="checkbox" value={criminalRecord} onChange={e => {
+                        setCriminalRecord(!criminalRecord);
+                        }}  disabled={submitting} />
                 </label>
-                {disclosure.criminalRecord ? 'Yes' : 'No'}
             </div>    
             <div>
                 <label>
                 Are you or have you ever been listed on the REDS banking database?
+                    <input type="checkbox"  value={redsBankingDbListed} onChange={e => {
+                        setRedsBankingDbListed(!redsBankingDbListed);
+                        }}  disabled={submitting} />
                 </label>
-                {disclosure.redsBankingDbListed ? 'Yes' : 'No'}
             </div>   
             <div>
                 <label>
                 Do you have any negative listings on your credit record (to the best of your knowledge)?
+                    <input type="checkbox"  value={negativeCreditListing} onChange={e => {
+                        setNegativeCreditListing(!negativeCreditListing);
+                        }}  disabled={submitting} />
                 </label>
-                {disclosure.negativeCreditListing ? 'Yes' : 'No'}
             </div>   
             <div>
                 <label>
                 Have you ever been put through a performance management/disciplinary process?
+                    <input type="checkbox"  value={performanceManagementPlaced} onChange={e => {
+                        setPerformanceManagementPlaced(!performanceManagementPlaced);
+                        }}  disabled={submitting} />
                 </label>
-                {disclosure.performanceManagementPlaced ? 'Yes' : 'No'}
             </div>   
             <div>
                 <label>
                 Do your beliefs/values prevent you from working in any industry (such as gambling / liquor)?
+                    <input type="checkbox"  value={ethicalIndustringRestriction} onChange={e => {
+                        setEthicalIndustringRestriction(!ethicalIndustringRestriction);
+                        }}  disabled={submitting} />
                 </label>
-                {disclosure.ethicalIndustringRestriction ? 'Yes' : 'No'}
             </div> 
              </div>   
         }

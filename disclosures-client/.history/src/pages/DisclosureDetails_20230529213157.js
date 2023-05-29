@@ -19,50 +19,52 @@ export function DisclosureDetails(){
         <h2>Disclosure Details</h2>
         {
             disclosure !== null &&
-            <div>           
             <div>
-                <label>
+
+           
+            <div>
+                <strong>
                     Name
-                </label>
+                </strong>
                 {disclosure.fullName}
             </div>
 
             <div>
-                <label>
+                <strong>
                     Email
-                </label>
+                </strong>
                 {disclosure.email}
             </div>
 
 
             <div>
-                <label>
+                <strong>
                     Do you have a criminal record/are you engaged in a current legal proceeding?
-                </label>
+                </strong>
                 {disclosure.criminalRecord ? 'Yes' : 'No'}
             </div>    
             <div>
-                <label>
+                <strong>
                 Are you or have you ever been listed on the REDS banking database?
-                </label>
+                </strong>
                 {disclosure.redsBankingDbListed ? 'Yes' : 'No'}
             </div>   
             <div>
-                <label>
+                <strong>
                 Do you have any negative listings on your credit record (to the best of your knowledge)?
-                </label>
+                </strong>
                 {disclosure.negativeCreditListing ? 'Yes' : 'No'}
             </div>   
             <div>
-                <label>
+                <strong>
                 Have you ever been put through a performance management/disciplinary process?
-                </label>
+                </strong>
                 {disclosure.performanceManagementPlaced ? 'Yes' : 'No'}
             </div>   
             <div>
-                <label>
+                <strong>
                 Do your beliefs/values prevent you from working in any industry (such as gambling / liquor)?
-                </label>
+                </strong>
                 {disclosure.ethicalIndustringRestriction ? 'Yes' : 'No'}
             </div> 
              </div>   

@@ -19,7 +19,9 @@ export function DisclosureDetails(){
         <h2>Disclosure Details</h2>
         {
             disclosure !== null &&
-            <div>           
+            <div>
+
+           
             <div>
                 <label>
                     Name
@@ -56,14 +58,18 @@ export function DisclosureDetails(){
             <div>
                 <label>
                 Have you ever been put through a performance management/disciplinary process?
+                    <input type="checkbox"  value={performanceManagementPlaced} onChange={e => {
+                        setPerformanceManagementPlaced(!performanceManagementPlaced);
+                        }}  disabled={submitting} />
                 </label>
-                {disclosure.performanceManagementPlaced ? 'Yes' : 'No'}
             </div>   
             <div>
                 <label>
                 Do your beliefs/values prevent you from working in any industry (such as gambling / liquor)?
+                    <input type="checkbox"  value={ethicalIndustringRestriction} onChange={e => {
+                        setEthicalIndustringRestriction(!ethicalIndustringRestriction);
+                        }}  disabled={submitting} />
                 </label>
-                {disclosure.ethicalIndustringRestriction ? 'Yes' : 'No'}
             </div> 
              </div>   
         }

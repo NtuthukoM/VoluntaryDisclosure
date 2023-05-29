@@ -37,10 +37,9 @@ export function CreateDisclosures(){
         };
         const response = fetch(discloseUrl, ops)
         .then(() => {
-            setSubmitting(false);
-            console.log('redirecting');
-           return redirect("/submitted");
-        }).catch(exc => console.log(`error ${exc}`));
+            console.log()
+            redirect("/submitted");
+        });
     }
     return (
         <>

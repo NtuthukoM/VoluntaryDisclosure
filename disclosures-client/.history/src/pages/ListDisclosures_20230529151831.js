@@ -9,7 +9,8 @@ export function ListDisclosures(){
     useEffect(() => {
         fetch(discloseUrl).then(x => x.json())
         .then(setDisclosures)
-        .catch(exc => console.log(exc));
+        .catch(exc => con)
+        ;
     }, []);
     return (
         <>

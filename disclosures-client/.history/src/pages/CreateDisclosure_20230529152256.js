@@ -39,7 +39,7 @@ export function CreateDisclosures(){
         .then(() => {
             setSubmitting(false);
             console.log('redirecting');
-           return redirect("/submitted");
+            redirect("/submitted");
         }).catch(exc => console.log(`error ${exc}`));
     }
     return (

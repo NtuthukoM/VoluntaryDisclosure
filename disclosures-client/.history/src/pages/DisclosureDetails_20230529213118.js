@@ -19,7 +19,9 @@ export function DisclosureDetails(){
         <h2>Disclosure Details</h2>
         {
             disclosure !== null &&
-            <div>           
+            <div>
+
+           
             <div>
                 <label>
                     Name

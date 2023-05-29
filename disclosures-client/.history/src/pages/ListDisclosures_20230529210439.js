@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { discloseUrl} from '../models/models';
 import { Nav} from '../components/nav';
-import {NavLink} from "react-router-dom"
+import {NavLink, useLo} from "react-router-dom"
 
 export function ListDisclosures(){
     

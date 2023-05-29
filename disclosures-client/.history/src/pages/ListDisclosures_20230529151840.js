@@ -10,6 +10,7 @@ export function ListDisclosures(){
         fetch(discloseUrl).then(x => x.json())
         .then(setDisclosures)
         .catch(exc => console.log(exc));
+        ;
     }, []);
     return (
         <>

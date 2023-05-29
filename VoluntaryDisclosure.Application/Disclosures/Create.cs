@@ -41,9 +41,9 @@ namespace VoluntaryDisclosure.Application.Disclosures
                         PerformanceManagementPlaced = disclosure.PerformanceManagementPlaced,
                         RedsBankingDbListed = disclosure.RedsBankingDbListed                        
                     };
-                    await context.Disclosures.AddAsync(model);
-                    var result = await context.SaveChangesAsync() > 0;
-                    if (result)
+                    //await context.Disclosures.AddAsync(model);
+                    //var result = await context.SaveChangesAsync() > 0;
+                    //if (result)
                         return Result<Unit>.Success(Unit.Value);
                 }
                 return Result<Unit>.Failure($"Failed to create {nameof(Disclosure)}.");
